@@ -1,0 +1,46 @@
+generated: '2026-07-21'
+method: searched
+source: live HTTP probes on 2026-07-21
+notes: No /.well-known/ discovery documents are published on any Valyuu host. valyuu.com
+  root 301-redirects to prioont.com (whose Shopify storefront serves an expired
+  *.myshopify.com certificate and 403s), but valyuu.com still serves its own 404s
+  for well-known paths via Cloudflare. partner-demo.valyuu.tech timed out (origin down).
+hosts:
+- host: https://valyuu.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+  - path: /robots.txt
+    status: 200
+- host: https://api.valyuu.tech
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+  - path: /robots.txt
+    status: 200
+- host: https://partner-demo.valyuu.tech
+  documents:
+  - path: /.well-known/security.txt
+    status: 0
+  - path: /.well-known/openid-configuration
+    status: 0

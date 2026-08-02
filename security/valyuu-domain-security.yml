@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: valyuu.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Aug 31 00:22:33 2026 GMT
+  hsts: null
+- host: api-staging.valyuu.tech
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  7 09:25:25 2026 GMT
+  hsts: null
+domains:
+- domain: valyuu.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: reject
+- domain: valyuu.tech
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: reject

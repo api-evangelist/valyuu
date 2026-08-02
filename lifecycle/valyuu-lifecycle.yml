@@ -1,0 +1,16 @@
+generated: '2026-07-21'
+method: derived
+source: https://github.com/Valyuu/partner-api-frontend-demo
+notes: No published versioning policy, deprecation policy, SLA, or status page was
+  found (the consumer site redirects to prioont.com, which is unreachable). The
+  versioning scheme is derived from the Partner API surface, where every endpoint
+  and schema is namespaced under v1 (URI-path versioning).
+versioning:
+  scheme: uri-path
+  current: v1
+deprecation:
+  policy_url: null
+  sunset_header: false
+sla: null
+status_page: null
+deprecated_operations: []

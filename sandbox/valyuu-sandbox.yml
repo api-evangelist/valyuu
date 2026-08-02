@@ -1,0 +1,22 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/Valyuu/partner-api-frontend-demo/blob/main/README.md
+notes: Valyuu publishes a staging environment for the Partner API, documented in the
+  README of its public frontend demo repository, which also publishes a demo
+  API_AUTH_KEY (a partner-scoped API key; value intentionally not copied here) and
+  sample category UUIDs for smartphone, tablet, and smartwatch. The staging origin
+  returned HTTP 522 (Cloudflare, origin down) when probed on 2026-07-21.
+environments:
+- name: staging
+  base_url: https://api-staging.valyuu.tech/partner
+  auth: X-Api-Key header (demo key published in the repository README)
+  status_probed: 522
+  probed: '2026-07-21'
+demo:
+  url: https://partner-demo.valyuu.tech
+  description: Hosted partner demo storefront referenced as the repository homepage;
+    unreachable (connection timeout) when probed on 2026-07-21.
+  status_probed: 0
+test_values:
+  allowed_categories_note: Example ALLOWED_CATEGORIES UUID mappings for smartphone,
+    tablet, and smartwatch are published in the demo repository README.

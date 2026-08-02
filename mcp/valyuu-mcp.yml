@@ -1,0 +1,56 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: https://github.com/Valyuu/partner-api-frontend-demo/blob/main/src/types/api.d.ts
+notes: No official Valyuu MCP server was found (docs host down, no npm packages, no
+  registry listings). This candidate tool list is derived from the fourteen Partner
+  API v1 operations present in the Swagger-generated TypeScript definitions committed
+  to Valyuu's public partner-api-frontend-demo repository. Operation names below are
+  the controller operation identifiers from that file; paths observed in the demo's
+  query client are noted where confirmed.
+server:
+  name: valyuu-partner
+  transport: http
+tools:
+- name: get_categories
+  description: List trade-in device categories (e.g. smartphone, tablet, smartwatch)
+  source_operation: V1ControllerGetCategories (GET /v1/categories)
+- name: get_brands
+  description: List brands for a device category
+  source_operation: V1ControllerGetBrands (GET /v1/brands)
+- name: get_series
+  description: List device series for a brand
+  source_operation: V1ControllerGetSeries
+- name: get_models
+  description: List device models
+  source_operation: V1ControllerGetModels (GET /v1/models)
+- name: get_model_questions
+  description: Get attribute and condition questions for a device model
+  source_operation: V1ControllerGetModelQuestions (GET /v1/model-questions)
+- name: get_faqs
+  description: Get FAQ content for seller or buyer surfaces
+  source_operation: V1ControllerGetFaqs
+- name: create_trade_in
+  description: Create a trade-in order for a seller (items, shipping address, payment type)
+  source_operation: V1ControllerCreateTradeIn (POST /v1/trade-in)
+- name: cancel_trade_in
+  description: Cancel a trade-in order
+  source_operation: V1ControllerCancelTradeIn
+- name: confirm_trade_in_item_offer
+  description: Accept or decline (recycle/return) an offer on a trade-in item
+  source_operation: V1ControllerConfirmTradeInItemOffer
+- name: get_trade_in_item_data
+  description: Get data for a single trade-in item
+  source_operation: V1ControllerGetTradeInItemData (GET /v1/trade-in-item-data)
+- name: get_trade_in_order_data
+  description: Get data for a trade-in order
+  source_operation: V1ControllerGetTradeInOrderData
+- name: get_trade_in_order_item_data
+  description: Get data for an item within a trade-in order
+  source_operation: V1ControllerGetTradeInOrderItemData
+- name: get_shipping_label
+  description: Get the shipping label for a trade-in shipment
+  source_operation: V1ControllerGetShippingLabel
+- name: get_paperless_code
+  description: Get a paperless drop-off code for a trade-in shipment
+  source_operation: V1ControllerGetPaperlessCode

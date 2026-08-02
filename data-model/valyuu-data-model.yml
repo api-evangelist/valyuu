@@ -1,0 +1,66 @@
+generated: '2026-07-21'
+method: derived
+source: https://github.com/Valyuu/partner-api-frontend-demo/blob/main/src/types/api.d.ts
+notes: Derived from the Swagger-generated TypeScript schema definitions committed to
+  Valyuu's public Partner API frontend demo (id-reference fields categoryId, brandId,
+  modelId, tradeInId and the V1* input/output interfaces). No OpenAPI document was
+  reachable to derive from directly.
+entities:
+- name: Category
+  description: Trade-in device category (smartphone, tablet, smartwatch); identified by UUID
+- name: Brand
+  description: Device brand within a category
+- name: Series
+  description: Device series within a brand
+- name: Model
+  description: Sellable device model with attribute combinations
+- name: ModelQuestion
+  description: Attribute and condition questions (with choices/options) used to grade a device
+- name: TradeInOrder
+  description: A seller's trade-in order; status SUBMITTED/RECEIVED/CANCELLED/COMPLETED
+- name: TradeInOrderItem
+  description: A device within a trade-in order; statuses include SUBMITTED, RECEIVED,
+    MANUAL_OFFER, PENDING_OFFER, PENDING_PAYMENT, PENDING_RETURN, PENDING_RECYCLE,
+    RETURNED, PAYMENT_IN_PROCESS, PAYMENT_FAILED, NOT_RECEIVED, COMPLETED
+- name: Offer
+  description: Offer on a trade-in item; status PENDING/ACCEPTED/REJECTED/EXPIRED with
+    grading note; confirmed as ACCEPT, DECLINE_RECYCLE, or DECLINE_RETURN
+- name: BankAccount
+  description: Seller bank account (holder name, account number) for BANK_TRANSFER payouts
+- name: Payment
+  description: Payout of type BANK_TRANSFER, DONATION, or BULK_SETTLEMENT with time unit HOURS/DAYS
+- name: Faq
+  description: FAQ content in collections SELLER_PLAN, SELLER_MAIN, BUYER_MAIN
+relationships:
+- from: Brand
+  to: Category
+  kind: belongs_to
+  via: categoryId
+- from: Series
+  to: Brand
+  kind: belongs_to
+  via: brandId
+- from: Model
+  to: Brand
+  kind: belongs_to
+  via: brandId
+- from: ModelQuestion
+  to: Model
+  kind: belongs_to
+  via: modelId
+- from: TradeInOrder
+  to: TradeInOrderItem
+  kind: has_many
+  via: tradeInId
+- from: TradeInOrderItem
+  to: Offer
+  kind: has_one
+  via: offerStatus
+- from: TradeInOrder
+  to: BankAccount
+  kind: has_one
+  via: bankAccount (required when paymentType is BANK_TRANSFER)
+- from: TradeInOrder
+  to: Payment
+  kind: has_one
+  via: paymentType

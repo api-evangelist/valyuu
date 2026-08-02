@@ -1,0 +1,25 @@
+generated: '2026-07-21'
+method: derived
+source: https://github.com/Valyuu/partner-api-frontend-demo
+notes: No OpenAPI is harvested in this repo (the documented Swagger endpoint
+  https://api-staging.valyuu.tech/partner/swagger-json returned HTTP 522 on
+  2026-07-21). This profile is derived from Valyuu's public Partner API frontend
+  demo, whose API client sends an X-Api-Key header on every request and whose
+  README documents an API_AUTH_KEY environment variable (a partner-issued key;
+  a demo key is published in the repository README).
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+  oauth2_flows: []
+schemes:
+- name: X-Api-Key
+  type: apiKey
+  in: header
+  parameter: X-Api-Key
+  description: Partner-issued API key sent as the X-Api-Key request header on all
+    Valyuu Partner API v1 calls.
+  sources:
+  - https://github.com/Valyuu/partner-api-frontend-demo/blob/main/src/queries/query-categories.ts
+  - https://github.com/Valyuu/partner-api-frontend-demo/blob/main/README.md

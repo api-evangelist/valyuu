@@ -1,7 +1,25 @@
 aid: valyuu
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/valyuu.png
 name: Valyuu
-description: Valyuu is a company surfaced as a portfolio company of techstars and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: Valyuu is an Amsterdam-founded embedded recommerce service provider offering
+  a plug-and-play trade-in platform that businesses integrate to buy back, resell,
+  and recycle used consumer electronics such as smartphones, tablets, and smartwatches
+  across Dutch, German, and English-language markets. Its partner-facing Trade-In API
+  powers embedded trade-in flows covering device catalogs, condition questions, offers,
+  payments, and shipping. Valyuu is a Techstars portfolio company; as of mid-2026
+  valyuu.com redirects to prioont.com, whose storefront is currently unreachable.
 url: https://raw.githubusercontent.com/api-evangelist/valyuu/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,16 +28,68 @@ x-backed-by:
 x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 8
+  pass: local-v1
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
-apis: []
+- Recommerce
+- Trade-In
+- Circular Economy
+- Consumer Electronics
+- Sustainability
+- eCommerce
+apis:
+- name: Valyuu Partner API
+  description: Partner-facing trade-in API behind Valyuu's embedded recommerce platform.
+    Version 1 exposes device catalog lookups (categories, brands, series, models, and
+    model condition/attribute questions), FAQ content, trade-in order creation and
+    cancellation, item offer confirmation (accept, decline-recycle, decline-return),
+    shipping labels, and paperless shipping codes, authenticated with an X-Api-Key
+    header. Documented via a Swagger endpoint referenced by Valyuu's public frontend
+    demo repository; the documented staging base URL was unreachable (HTTP 522) when
+    probed on 2026-07-21.
+  image: https://kinlane-productions2.s3.us-east-1.amazonaws.com/apis-json-icon.png
+  humanURL: https://github.com/Valyuu/partner-api-frontend-demo
+  baseURL: https://api-staging.valyuu.tech/partner
+  tags:
+  - Trade-In
+  - Recommerce
+  - Consumer Electronics
+  properties:
+  - type: SourceCode
+    url: https://github.com/Valyuu/partner-api-frontend-demo
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/valyuu-domain-security.yml
 - type: Website
   url: https://valyuu.com/
+- type: GitHubOrganization
+  url: https://github.com/Valyuu
+- type: PrivacyPolicy
+  url: https://15q6umhquujjvdoy.public.blob.vercel-storage.com/privacy-policy/(EN)%20Privacy%20policy-SCHnPlBo0ZIC7CyGhWHgpLjRIeEVLE.pdf
+- type: TermsOfService
+  url: https://15q6umhquujjvdoy.public.blob.vercel-storage.com/selling-t%26c/(EN)%20Selling%20Terms%20and%20Conditions_Valyuu%20-LdMQiilaDa887YNj0BWw2XEGmYgLmK.pdf
+- type: WellKnown
+  url: well-known/valyuu-well-known.yml
+- type: MCPServer
+  url: mcp/valyuu-mcp.yml
+- type: LLMsTxt
+  url: llms/valyuu-llms.txt
+- type: Authentication
+  url: authentication/valyuu-authentication.yml
+- type: Lifecycle
+  url: lifecycle/valyuu-lifecycle.yml
+- type: DataModel
+  url: data-model/valyuu-data-model.yml
+- type: Sandbox
+  url: sandbox/valyuu-sandbox.yml
