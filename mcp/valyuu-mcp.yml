@@ -2,12 +2,11 @@ generated: '2026-07-21'
 method: derived
 status: candidate
 source: https://github.com/Valyuu/partner-api-frontend-demo/blob/main/src/types/api.d.ts
-notes: No official Valyuu MCP server was found (docs host down, no npm packages, no
-  registry listings). This candidate tool list is derived from the fourteen Partner
-  API v1 operations present in the Swagger-generated TypeScript definitions committed
-  to Valyuu's public partner-api-frontend-demo repository. Operation names below are
-  the controller operation identifiers from that file; paths observed in the demo's
-  query client are noted where confirmed.
+notes: No official Valyuu MCP server was found (docs host down, no npm packages, no registry listings).
+  This candidate tool list is derived from the fourteen Partner API v1 operations present in the Swagger-generated
+  TypeScript definitions committed to Valyuu's public partner-api-frontend-demo repository. Operation
+  names below are the controller operation identifiers from that file; paths observed in the demo's query
+  client are noted where confirmed.
 server:
   name: valyuu-partner
   transport: http
@@ -54,3 +53,9 @@ tools:
 - name: get_paperless_code
   description: Get a paperless drop-off code for a trade-in shipment
   source_operation: V1ControllerGetPaperlessCode
+deployment:
+  mode: none
+  verified: derived
+  tools: 14
+  checked: '2026-08-12'
+  source: catalog MCP census
